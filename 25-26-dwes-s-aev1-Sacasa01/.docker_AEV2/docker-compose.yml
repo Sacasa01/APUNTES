@@ -1,0 +1,25 @@
+services:
+  server-php-aev2:
+    container_name: servidor_php_aev2
+    build:
+      dockerfile: Dockerfile
+      context: .
+    restart: unless-stopped
+    volumes:
+      - ../:/www/html
+    stdin_open: true
+    links:
+      - mariadb-server-aev2
+    ports:
+      - "8020:8020"
+  mariadb-server-aev2:
+    container_name: servidor_db_aev2
+    image: mariadb
+    ports:
+      - "3320:3306"
+    restart: unless-stopped
+    environment:
+      MYSQL_USER: root
+      MYSQL_ROOT_PASSWORD: root
+    volumes:
+      - ../.db_mysql/:/var/lib/mysql

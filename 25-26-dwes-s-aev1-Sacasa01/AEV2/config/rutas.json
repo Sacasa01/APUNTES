@@ -1,0 +1,26 @@
+{
+  "/": {
+    "controller": "MainController",
+    "action": "main"
+  },
+  "/clientes": {
+    "controller": "ClientController",
+    "action": "list"
+  },
+  "/pedidos": {
+    "controller": "OrderController",
+    "action": "list"
+  },
+  "/pedido": {
+    "controller": "OrderController",
+    "action": "crud"
+  },
+  "/productos": {
+    "controller": "ProductController",
+    "action": "list"
+  },
+  "/producto": {
+    "controller": "ProductController",
+    "action": "crud"
+  }
+}
