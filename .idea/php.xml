@@ -10,6 +10,68 @@
     <option name="highlightLevel" value="WARNING" />
     <option name="transferred" value="true" />
   </component>
+  <component name="PhpIncludePathManager">
+    <include_path>
+      <path value="$PROJECT_DIR$/AP5-1/vendor/composer" />
+      <path value="$PROJECT_DIR$/AP5-1/vendor/psr/cache" />
+      <path value="$PROJECT_DIR$/AP5-1/vendor/psr/log" />
+      <path value="$PROJECT_DIR$/AP5-1/vendor/psr/container" />
+      <path value="$PROJECT_DIR$/AP5-1/vendor/doctrine/lexer" />
+      <path value="$PROJECT_DIR$/AP5-1/vendor/doctrine/deprecations" />
+      <path value="$PROJECT_DIR$/AP5-1/vendor/phpoption/phpoption" />
+      <path value="$PROJECT_DIR$/AP5-1/vendor/doctrine/event-manager" />
+      <path value="$PROJECT_DIR$/AP5-1/vendor/doctrine/collections" />
+      <path value="$PROJECT_DIR$/AP5-1/vendor/doctrine/persistence" />
+      <path value="$PROJECT_DIR$/AP5-1/vendor/doctrine/instantiator" />
+      <path value="$PROJECT_DIR$/AP5-1/vendor/doctrine/inflector" />
+      <path value="$PROJECT_DIR$/AP5-1/vendor/doctrine/dbal" />
+      <path value="$PROJECT_DIR$/AP5-1/vendor/doctrine/orm" />
+      <path value="$PROJECT_DIR$/AP5-1/vendor/graham-campbell/result-type" />
+      <path value="$PROJECT_DIR$/AP5-1/vendor/symfony/cache-contracts" />
+      <path value="$PROJECT_DIR$/AP5-1/vendor/symfony/deprecation-contracts" />
+      <path value="$PROJECT_DIR$/AP5-1/vendor/symfony/console" />
+      <path value="$PROJECT_DIR$/AP5-1/vendor/symfony/polyfill-php84" />
+      <path value="$PROJECT_DIR$/AP5-1/vendor/symfony/var-exporter" />
+      <path value="$PROJECT_DIR$/AP5-1/vendor/symfony/polyfill-intl-grapheme" />
+      <path value="$PROJECT_DIR$/AP5-1/vendor/symfony/polyfill-intl-normalizer" />
+      <path value="$PROJECT_DIR$/AP5-1/vendor/symfony/cache" />
+      <path value="$PROJECT_DIR$/AP5-1/vendor/symfony/polyfill-php80" />
+      <path value="$PROJECT_DIR$/AP5-1/vendor/symfony/string" />
+      <path value="$PROJECT_DIR$/AP5-1/vendor/symfony/service-contracts" />
+      <path value="$PROJECT_DIR$/AP5-1/vendor/vlucas/phpdotenv" />
+      <path value="$PROJECT_DIR$/AP5-1/vendor/symfony/polyfill-ctype" />
+      <path value="$PROJECT_DIR$/AP5-1/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/25-26-dwes-s-aev1-Sacasa01/AEV2/vendor/composer" />
+      <path value="$PROJECT_DIR$/25-26-dwes-s-aev1-Sacasa01/AEV2/vendor/psr/cache" />
+      <path value="$PROJECT_DIR$/25-26-dwes-s-aev1-Sacasa01/AEV2/vendor/psr/log" />
+      <path value="$PROJECT_DIR$/25-26-dwes-s-aev1-Sacasa01/AEV2/vendor/psr/container" />
+      <path value="$PROJECT_DIR$/25-26-dwes-s-aev1-Sacasa01/AEV2/vendor/doctrine/lexer" />
+      <path value="$PROJECT_DIR$/25-26-dwes-s-aev1-Sacasa01/AEV2/vendor/doctrine/deprecations" />
+      <path value="$PROJECT_DIR$/25-26-dwes-s-aev1-Sacasa01/AEV2/vendor/doctrine/event-manager" />
+      <path value="$PROJECT_DIR$/25-26-dwes-s-aev1-Sacasa01/AEV2/vendor/doctrine/collections" />
+      <path value="$PROJECT_DIR$/25-26-dwes-s-aev1-Sacasa01/AEV2/vendor/doctrine/persistence" />
+      <path value="$PROJECT_DIR$/25-26-dwes-s-aev1-Sacasa01/AEV2/vendor/doctrine/instantiator" />
+      <path value="$PROJECT_DIR$/25-26-dwes-s-aev1-Sacasa01/AEV2/vendor/doctrine/inflector" />
+      <path value="$PROJECT_DIR$/25-26-dwes-s-aev1-Sacasa01/AEV2/vendor/doctrine/dbal" />
+      <path value="$PROJECT_DIR$/25-26-dwes-s-aev1-Sacasa01/AEV2/vendor/doctrine/orm" />
+      <path value="$PROJECT_DIR$/25-26-dwes-s-aev1-Sacasa01/AEV2/vendor/symfony/cache-contracts" />
+      <path value="$PROJECT_DIR$/25-26-dwes-s-aev1-Sacasa01/AEV2/vendor/symfony/deprecation-contracts" />
+      <path value="$PROJECT_DIR$/25-26-dwes-s-aev1-Sacasa01/AEV2/vendor/symfony/console" />
+      <path value="$PROJECT_DIR$/25-26-dwes-s-aev1-Sacasa01/AEV2/vendor/symfony/polyfill-php84" />
+      <path value="$PROJECT_DIR$/25-26-dwes-s-aev1-Sacasa01/AEV2/vendor/phpoption/phpoption" />
+      <path value="$PROJECT_DIR$/25-26-dwes-s-aev1-Sacasa01/AEV2/vendor/symfony/var-exporter" />
+      <path value="$PROJECT_DIR$/25-26-dwes-s-aev1-Sacasa01/AEV2/vendor/symfony/polyfill-intl-grapheme" />
+      <path value="$PROJECT_DIR$/25-26-dwes-s-aev1-Sacasa01/AEV2/vendor/symfony/polyfill-intl-normalizer" />
+      <path value="$PROJECT_DIR$/25-26-dwes-s-aev1-Sacasa01/AEV2/vendor/symfony/cache" />
+      <path value="$PROJECT_DIR$/25-26-dwes-s-aev1-Sacasa01/AEV2/vendor/symfony/polyfill-php80" />
+      <path value="$PROJECT_DIR$/25-26-dwes-s-aev1-Sacasa01/AEV2/vendor/symfony/string" />
+      <path value="$PROJECT_DIR$/25-26-dwes-s-aev1-Sacasa01/AEV2/vendor/symfony/service-contracts" />
+      <path value="$PROJECT_DIR$/25-26-dwes-s-aev1-Sacasa01/AEV2/vendor/vlucas/phpdotenv" />
+      <path value="$PROJECT_DIR$/25-26-dwes-s-aev1-Sacasa01/AEV2/vendor/symfony/polyfill-ctype" />
+      <path value="$PROJECT_DIR$/25-26-dwes-s-aev1-Sacasa01/AEV2/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/25-26-dwes-s-aev1-Sacasa01/AEV2/vendor/graham-campbell/result-type" />
+    </include_path>
+  </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="8.0">
     <option name="suggestChangeDefaultLanguageLevel" value="false" />
   </component>
