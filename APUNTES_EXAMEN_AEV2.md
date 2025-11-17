@@ -237,27 +237,22 @@ private Employee $employee;
 ### 📌 ManyToMany (Muchos ↔ Muchos)
 ```php
 // PROPIETARIO (con JoinTable)
-#[ManyToMany(targetEntity: Client::class, inversedBy: 'employees')]
-#[JoinTable(
-    name: 'employee_client',                    // Tabla de unión
-    joinColumns: [
-        new JoinColumn(name: 'employee_id', referencedColumnName: 'id')
-    ],
-    inverseJoinColumns: [
-        new JoinColumn(name: 'client_id', referencedColumnName: 'id')
-    ]
-)]
-private Collection $clients;
+#[ManyToMany(targetEntity: Student::class, mappedBy: 'courses')]
+private Collection $students;
 
-// INVERSO (sin JoinTable)
-#[ManyToMany(targetEntity: Employee::class, mappedBy: 'clients')]
-private Collection $employees;
+ public function __construct()
+ {
+ $this->students = new ArrayCollection();
+ }
 
-public function __construct()
-{
-    $this->clients = new ArrayCollection();
-    $this->employees = new ArrayCollection();
-}
+ #[ManyToMany(targetEntity: Course::class, inversedBy: 'students')]
+ #[JoinTable(name: 'cursos_estudiantes')]
+ private Collection $courses;
+ 
+ public function __construct()
+ {
+ $this->courses = new ArrayCollection();
+ }
 ```
 
 ### 🎯 Autorreferencia (Employee → Employee Manager)

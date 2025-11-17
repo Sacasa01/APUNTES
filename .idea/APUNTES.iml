@@ -2,7 +2,67 @@
 <module type="WEB_MODULE" version="4">
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
-      <sourceFolder url="file://$MODULE_DIR$/25-26-dwes-s-aev2-Sacasa01/AEV2/src" isTestSource="false" packagePrefix="AP51" />
+      <sourceFolder url="file://$MODULE_DIR$/25-26-dwes-s-aev1-Sacasa01/AEV2/src" isTestSource="false" packagePrefix="AEV2\" />
+      <sourceFolder url="file://$MODULE_DIR$/AP5-1/src" isTestSource="false" packagePrefix="AP51\" />
+      <sourceFolder url="file://$MODULE_DIR$/AP5-2/src" isTestSource="false" packagePrefix="AP52\" />
+      <excludeFolder url="file://$MODULE_DIR$/25-26-dwes-s-aev1-Sacasa01/AEV2/vendor/composer" />
+      <excludeFolder url="file://$MODULE_DIR$/25-26-dwes-s-aev1-Sacasa01/AEV2/vendor/doctrine/collections" />
+      <excludeFolder url="file://$MODULE_DIR$/25-26-dwes-s-aev1-Sacasa01/AEV2/vendor/doctrine/dbal" />
+      <excludeFolder url="file://$MODULE_DIR$/25-26-dwes-s-aev1-Sacasa01/AEV2/vendor/doctrine/deprecations" />
+      <excludeFolder url="file://$MODULE_DIR$/25-26-dwes-s-aev1-Sacasa01/AEV2/vendor/doctrine/event-manager" />
+      <excludeFolder url="file://$MODULE_DIR$/25-26-dwes-s-aev1-Sacasa01/AEV2/vendor/doctrine/inflector" />
+      <excludeFolder url="file://$MODULE_DIR$/25-26-dwes-s-aev1-Sacasa01/AEV2/vendor/doctrine/instantiator" />
+      <excludeFolder url="file://$MODULE_DIR$/25-26-dwes-s-aev1-Sacasa01/AEV2/vendor/doctrine/lexer" />
+      <excludeFolder url="file://$MODULE_DIR$/25-26-dwes-s-aev1-Sacasa01/AEV2/vendor/doctrine/orm" />
+      <excludeFolder url="file://$MODULE_DIR$/25-26-dwes-s-aev1-Sacasa01/AEV2/vendor/doctrine/persistence" />
+      <excludeFolder url="file://$MODULE_DIR$/25-26-dwes-s-aev1-Sacasa01/AEV2/vendor/graham-campbell/result-type" />
+      <excludeFolder url="file://$MODULE_DIR$/25-26-dwes-s-aev1-Sacasa01/AEV2/vendor/phpoption/phpoption" />
+      <excludeFolder url="file://$MODULE_DIR$/25-26-dwes-s-aev1-Sacasa01/AEV2/vendor/psr/cache" />
+      <excludeFolder url="file://$MODULE_DIR$/25-26-dwes-s-aev1-Sacasa01/AEV2/vendor/psr/container" />
+      <excludeFolder url="file://$MODULE_DIR$/25-26-dwes-s-aev1-Sacasa01/AEV2/vendor/psr/log" />
+      <excludeFolder url="file://$MODULE_DIR$/25-26-dwes-s-aev1-Sacasa01/AEV2/vendor/symfony/cache" />
+      <excludeFolder url="file://$MODULE_DIR$/25-26-dwes-s-aev1-Sacasa01/AEV2/vendor/symfony/cache-contracts" />
+      <excludeFolder url="file://$MODULE_DIR$/25-26-dwes-s-aev1-Sacasa01/AEV2/vendor/symfony/console" />
+      <excludeFolder url="file://$MODULE_DIR$/25-26-dwes-s-aev1-Sacasa01/AEV2/vendor/symfony/deprecation-contracts" />
+      <excludeFolder url="file://$MODULE_DIR$/25-26-dwes-s-aev1-Sacasa01/AEV2/vendor/symfony/polyfill-ctype" />
+      <excludeFolder url="file://$MODULE_DIR$/25-26-dwes-s-aev1-Sacasa01/AEV2/vendor/symfony/polyfill-intl-grapheme" />
+      <excludeFolder url="file://$MODULE_DIR$/25-26-dwes-s-aev1-Sacasa01/AEV2/vendor/symfony/polyfill-intl-normalizer" />
+      <excludeFolder url="file://$MODULE_DIR$/25-26-dwes-s-aev1-Sacasa01/AEV2/vendor/symfony/polyfill-mbstring" />
+      <excludeFolder url="file://$MODULE_DIR$/25-26-dwes-s-aev1-Sacasa01/AEV2/vendor/symfony/polyfill-php80" />
+      <excludeFolder url="file://$MODULE_DIR$/25-26-dwes-s-aev1-Sacasa01/AEV2/vendor/symfony/polyfill-php84" />
+      <excludeFolder url="file://$MODULE_DIR$/25-26-dwes-s-aev1-Sacasa01/AEV2/vendor/symfony/service-contracts" />
+      <excludeFolder url="file://$MODULE_DIR$/25-26-dwes-s-aev1-Sacasa01/AEV2/vendor/symfony/string" />
+      <excludeFolder url="file://$MODULE_DIR$/25-26-dwes-s-aev1-Sacasa01/AEV2/vendor/symfony/var-exporter" />
+      <excludeFolder url="file://$MODULE_DIR$/25-26-dwes-s-aev1-Sacasa01/AEV2/vendor/vlucas/phpdotenv" />
+      <excludeFolder url="file://$MODULE_DIR$/AP5-1/vendor/composer" />
+      <excludeFolder url="file://$MODULE_DIR$/AP5-1/vendor/doctrine/collections" />
+      <excludeFolder url="file://$MODULE_DIR$/AP5-1/vendor/doctrine/dbal" />
+      <excludeFolder url="file://$MODULE_DIR$/AP5-1/vendor/doctrine/deprecations" />
+      <excludeFolder url="file://$MODULE_DIR$/AP5-1/vendor/doctrine/event-manager" />
+      <excludeFolder url="file://$MODULE_DIR$/AP5-1/vendor/doctrine/inflector" />
+      <excludeFolder url="file://$MODULE_DIR$/AP5-1/vendor/doctrine/instantiator" />
+      <excludeFolder url="file://$MODULE_DIR$/AP5-1/vendor/doctrine/lexer" />
+      <excludeFolder url="file://$MODULE_DIR$/AP5-1/vendor/doctrine/orm" />
+      <excludeFolder url="file://$MODULE_DIR$/AP5-1/vendor/doctrine/persistence" />
+      <excludeFolder url="file://$MODULE_DIR$/AP5-1/vendor/graham-campbell/result-type" />
+      <excludeFolder url="file://$MODULE_DIR$/AP5-1/vendor/phpoption/phpoption" />
+      <excludeFolder url="file://$MODULE_DIR$/AP5-1/vendor/psr/cache" />
+      <excludeFolder url="file://$MODULE_DIR$/AP5-1/vendor/psr/container" />
+      <excludeFolder url="file://$MODULE_DIR$/AP5-1/vendor/psr/log" />
+      <excludeFolder url="file://$MODULE_DIR$/AP5-1/vendor/symfony/cache" />
+      <excludeFolder url="file://$MODULE_DIR$/AP5-1/vendor/symfony/cache-contracts" />
+      <excludeFolder url="file://$MODULE_DIR$/AP5-1/vendor/symfony/console" />
+      <excludeFolder url="file://$MODULE_DIR$/AP5-1/vendor/symfony/deprecation-contracts" />
+      <excludeFolder url="file://$MODULE_DIR$/AP5-1/vendor/symfony/polyfill-ctype" />
+      <excludeFolder url="file://$MODULE_DIR$/AP5-1/vendor/symfony/polyfill-intl-grapheme" />
+      <excludeFolder url="file://$MODULE_DIR$/AP5-1/vendor/symfony/polyfill-intl-normalizer" />
+      <excludeFolder url="file://$MODULE_DIR$/AP5-1/vendor/symfony/polyfill-mbstring" />
+      <excludeFolder url="file://$MODULE_DIR$/AP5-1/vendor/symfony/polyfill-php80" />
+      <excludeFolder url="file://$MODULE_DIR$/AP5-1/vendor/symfony/polyfill-php84" />
+      <excludeFolder url="file://$MODULE_DIR$/AP5-1/vendor/symfony/service-contracts" />
+      <excludeFolder url="file://$MODULE_DIR$/AP5-1/vendor/symfony/string" />
+      <excludeFolder url="file://$MODULE_DIR$/AP5-1/vendor/symfony/var-exporter" />
+      <excludeFolder url="file://$MODULE_DIR$/AP5-1/vendor/vlucas/phpdotenv" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
