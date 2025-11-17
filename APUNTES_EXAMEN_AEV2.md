@@ -235,7 +235,6 @@ private Employee $employee;
 ```
 
 ### 📌 ManyToMany (Muchos ↔ Muchos)
-```php
 // PROPIETARIO (con JoinTable)
 #[ManyToMany(targetEntity: Student::class, mappedBy: 'courses')]
 private Collection $students;
