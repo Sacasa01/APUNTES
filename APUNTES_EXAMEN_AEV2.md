@@ -128,14 +128,6 @@ private int $id;
 ```
 **Cuándo usarlo:** Cuando los IDs no son autoincrement (raro, como con PROD_NUM)
 
-### Sin GeneratedValue
-```php
-#[Id]
-#[Column(name: 'id', type: 'integer')]
-private int $id;
-```
-**Cuándo usarlo:** Casi nunca, solo si tu BD está muy mal configurada
-
 ---
 
 ## 📋 5. TIPOS DE DATOS EN ENTIDADES
@@ -174,7 +166,7 @@ private ?string $middleName = null;
 #[Column(type: 'integer', options: ['unsigned' => true])]
 private int $count;
 
-// Unique
+// Unique (En la pestaña de la BD "indexes"
 #[Column(type: 'string', unique: true)]
 private string $email;
 ```
@@ -185,7 +177,8 @@ private string $email;
 
 ### 📌 ManyToOne (Muchos → Uno)
 ```php
-// Lado del MUCHOS (es el propietario de la foreign key)
+// Lado del MUCHOS (tiene FK)
+	     Apunta a la otra tabla		Nombre de la collection
 #[ManyToOne(targetEntity: Department::class, inversedBy: 'employees')]
 #[JoinColumn(
     name: 'dept_no',                    // ← Nombre de la FK en ESTA tabla
@@ -205,7 +198,8 @@ private Department $department;
 
 ### 📌 OneToMany (Uno → Muchos)
 ```php
-// Lado del UNO (es el inverso, no tiene FK)
+// Lado del UNO (No tiene FK)
+	    Apunta a la otra tabla     nombre de la propiedad en la otra entidad
 #[OneToMany(targetEntity: Employee::class, mappedBy: 'department')]
 private Collection $employees;
 
