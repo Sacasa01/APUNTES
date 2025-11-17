@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><?php echo $update ? 'Actualizar' : 'Nuevo' ?> Usuario</title>
+</head>
+<body>
+<h1><?php echo $update ? 'Actualizar' : 'Nuevo' ?> Usuario</h1>
+<nav>
+    <a href="/">Inicio</a> |
+    <a href="/users">Usuarios</a> |
+    <a href="/servers">Servidores</a> |
+    <a href="/connections">Conexiones</a>
+</nav>
+<hr>
+<form action="<?php echo $update ? '/user/update/' . $user->getId() : '/user/create' ?>" method="POST">
+    <label for="username">Username (*):</label><br>
+    <input type="text" name="username" id="username"
+           value="<?php echo $update ? htmlspecialchars($user->getUsername()) : '' ?>"
+           required maxlength="30"><br><br>
+
+    <label for="name">Nombre (*):</label><br>
+    <input type="text" name="name" id="name"
+           value="<?php echo $update ? htmlspecialchars($user->getName()) : '' ?>"
+           required maxlength="30"><br><br>
+
+    <label for="first_subname">Primer Apellido (*):</label><br>
+    <input type="text" name="first_subname" id="first_subname"
+           value="<?php echo $update ? htmlspecialchars($user->getFirstSubname()) : '' ?>"
+           required maxlength="100"><br><br>
+
+    <label for="second_subname">Segundo Apellido:</label><br>
+    <input type="text" name="second_subname" id="second_subname"
+           value="<?php echo $update && $user->getSecondSubname() ? htmlspecialchars($user->getSecondSubname()) : '' ?>"
+           maxlength="100"><br><br>
+
+    <label for="address">Dirección:</label><br>
+    <input type="text" name="address" id="address"
+           value="<?php echo $update && $user->getAddress() ? htmlspecialchars($user->getAddress()) : '' ?>"
+           maxlength="250"><br><br>
+
+    <label for="telephone">Teléfono:</label><br>
+    <input type="text" name="telephone" id="telephone"
+           value="<?php echo $update && $user->getTelephone() ? htmlspecialchars($user->getTelephone()) : '' ?>"
+           maxlength="13"><br><br>
+
+    <label for="city">Ciudad:</label><br>
+    <input type="text" name="city" id="city"
+           value="<?php echo $update && $user->getCity() ? htmlspecialchars($user->getCity()) : '' ?>"
+           maxlength="250"><br><br>
+
+    <label for="country">País (*) (código de 2-4 caracteres):</label><br>
+    <input type="text" name="country" id="country"
+           value="<?php echo $update ? htmlspecialchars($user->getCountry()) : '' ?>"
+           required maxlength="4"><br><br>
+
+    <label for="email">Email (*):</label><br>
+    <input type="email" name="email" id="email"
+           value="<?php echo $update ? htmlspecialchars($user->getEmail()) : '' ?>"
+           required maxlength="250"><br><br>
+
+    <label for="observation">Observaciones:</label><br>
+    <textarea name="observation" id="observation" rows="4" cols="50"><?php echo $update && $user->getObservation() ? htmlspecialchars($user->getObservation()) : '' ?></textarea><br><br>
+
+    <button type="submit" name="submit" value="1"><?php echo $update ? 'Actualizar' : 'Crear' ?> Usuario</button>
+    <?php if(!$update): ?>
+    <button type="reset">Limpiar</button>
+    <?php endif; ?>
+    <a href="/users">
+        <button type="button">Cancelar</button>
+    </a>
+</form>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eliminar Usuario</title>
+</head>
+<body>
+<h1><?php echo !empty($error) ? 'Error al Eliminar Usuario' : 'Confirmar Eliminación de Usuario' ?></h1>
+<nav>
+    <a href="/">Inicio</a> |
+    <a href="/users">Usuarios</a> |
+    <a href="/servers">Servidores</a> |
+    <a href="/connections">Conexiones</a>
+</nav>
+<hr>
+
+<?php if (!empty($error)): ?>
+    <div>
+        <h2>❌ ERROR</h2>
+
+        <p><strong>Usuario:</strong></p>
+        <p><strong>Username:</strong> <?php echo htmlspecialchars($user->getUsername()) ?></p>
+        <p><strong>Nombre:</strong> <?php echo htmlspecialchars($user->getName()) ?> <?php echo htmlspecialchars($user->getFirstSubname()) ?></p>
+        <p><strong>Email:</strong> <?php echo htmlspecialchars($user->getEmail()) ?></p>
+
+        <hr>
+
+        <p><strong><?php echo htmlspecialchars($error) ?></strong></p>
+
+        <p>
+            Este usuario está siendo utilizado en una o más conexiones.
+            Para eliminarlo, primero debe eliminar las conexiones que lo referencian.
+        </p>
+
+        <a href="/users">
+            <button type="button">
+                Volver a Usuarios
+            </button>
+        </a>
+    </div>
+<?php else: ?>
+    <div>
+        <h2>⚠️ ADVERTENCIA</h2>
+        <p>¿Está seguro que desea eliminar el siguiente usuario?</p>
+
+        <p><strong>Username:</strong> <?php echo htmlspecialchars($user->getUsername()) ?></p>
+        <p><strong>Nombre:</strong> <?php echo htmlspecialchars($user->getName()) ?> <?php echo htmlspecialchars($user->getFirstSubname()) ?></p>
+        <p><strong>Email:</strong> <?php echo htmlspecialchars($user->getEmail()) ?></p>
+
+        <p><strong>Esta acción no se puede deshacer.</strong></p>
+
+        <form action="/user/delete/<?php echo $user->getId() ?>" method="POST">
+            <button type="submit" name="confirm" value="1">
+                Sí, Eliminar
+            </button>
+        </form>
+
+        <a href="/users">
+            <button type="button">
+                No, Cancelar
+            </button>
+        </a>
+    </div>
+<?php endif; ?>
+</body>
+</html>

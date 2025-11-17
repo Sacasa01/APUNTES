@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listado de Conexiones</title>
+</head>
+<body>
+<h1>Listado de Conexiones</h1>
+<nav>
+    <a href="/">Inicio</a> |
+    <a href="/users">Usuarios</a> |
+    <a href="/servers">Servidores</a> |
+    <a href="/connections">Conexiones</a>
+</nav>
+<hr>
+<p><a href="/connection/create">➕ Crear Nueva Conexión</a></p>
+<table border="1">
+    <tr>
+        <th>Usuario</th>
+        <th>Email Usuario</th>
+        <th>Servidor</th>
+        <th>IP Conexión</th>
+        <th>Fecha Conexión</th>
+    </tr>
+    <?php if (empty($connections)): ?>
+    <tr>
+        <td colspan="5">No hay conexiones registradas</td>
+    </tr>
+    <?php else: ?>
+    <?php foreach ($connections as $connection): ?>
+    <tr>
+        <td><?php echo htmlspecialchars($connection->getUser()->getName()) ?> <?php echo htmlspecialchars($connection->getUser()->getFirstSubname()) ?></td>
+        <td><?php echo htmlspecialchars($connection->getUser()->getEmail()) ?></td>
+        <td><?php echo htmlspecialchars($connection->getServer()->getUrl()) ?></td>
+        <td><?php echo htmlspecialchars($connection->getIp()) ?></td>
+        <td><?php echo htmlspecialchars($connection->getDateConnection()->format('d-m-Y H:i:s')) ?></td>
+    </tr>
+    <?php endforeach; ?>
+    <?php endif; ?>
+</table>
+<p><em>Nota: Las conexiones no se pueden actualizar ni eliminar según los requisitos del sistema.</em></p>
+</body>
+</html>

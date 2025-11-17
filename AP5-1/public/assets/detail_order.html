@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle del Pedido</title>
+</head>
+<body>
+<h1>Detalle del Pedido #<?php echo htmlspecialchars($order->getId()) ?></h1>
+<nav>
+    <a href="/">Inicio</a> |
+    <a href="/clientes">Clientes</a> |
+    <a href="/pedidos">Pedidos</a> |
+    <a href="/productos">Productos</a>
+</nav>
+<hr>
+
+<h2>Información del Pedido</h2>
+<table border="1">
+    <tr>
+        <th>Número Pedido:</th>
+        <td><?php echo htmlspecialchars($order->getId()) ?></td>
+    </tr>
+    <tr>
+        <th>Fecha Pedido:</th>
+        <td><?php echo $order->getOrderDate() ? htmlspecialchars($order->getOrderDate()->format('d-m-Y')) : '-' ?></td>
+    </tr>
+    <tr>
+        <th>Tipo:</th>
+        <td><?php echo htmlspecialchars($order->getOrderType() ?? '-') ?></td>
+    </tr>
+    <tr>
+        <th>Cliente:</th>
+        <td><?php echo htmlspecialchars($order->getCustomer()->getName()) ?>
+            (Código: <?php echo htmlspecialchars($order->getCustomer()->getId()) ?>)
+        </td>
+    </tr>
+    <tr>
+        <th>Fecha Envío:</th>
+        <td><?php echo $order->getShippingDate() ? htmlspecialchars($order->getShippingDate()->format('d-m-Y')) : '-'
+            ?>
+        </td>
+    </tr>
+    <tr>
+        <th>Total:</th>
+        <td><strong><?php echo $order->getTotal() !== null ? number_format($order->getTotal(), 2) . ' €' : '-'
+            ?></strong></td>
+    </tr>
+</table>
+
+<h2>Detalles del Pedido</h2>
+<table border="1">
+    <tr>
+        <th>Nº Detalle</th>
+        <th>Producto</th>
+        <th>Precio Venta</th>
+        <th>Cantidad</th>
+        <th>Importe</th>
+    </tr>
+    <?php
+    $details = $order->getDetails();
+    if ($details->isEmpty()):
+    ?>
+    <tr>
+        <td colspan="5">No hay detalles para este pedido</td>
+    </tr>
+    <?php else: ?>
+    <?php foreach ($details as $detail): ?>
+    <tr>
+        <td><?php echo htmlspecialchars($detail->getId()) ?></td>
+        <td><?php echo htmlspecialchars($detail->getProduct()->getDescription()) ?>
+            (ID: <?php echo htmlspecialchars($detail->getProduct()->getId()) ?>)
+        </td>
+        <td><?php echo $detail->getPrice() !== null ? number_format($detail->getPrice(), 2) . ' €' : '-' ?></td>
+        <td><?php echo htmlspecialchars($detail->getQuantity() ?? '-') ?></td>
+        <td><?php echo $detail->getAmount() !== null ? number_format($detail->getAmount(), 2) . ' €' : '-' ?></td>
+    </tr>
+    <?php endforeach; ?>
+    <?php endif; ?>
+</table>
+</body>
+</html>

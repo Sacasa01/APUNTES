@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eliminar Servidor</title>
+</head>
+<body>
+<h1><?php echo !empty($error) ? 'Error al Eliminar Servidor' : 'Confirmar Eliminación de Servidor' ?></h1>
+<nav>
+    <a href="/">Inicio</a> |
+    <a href="/users">Usuarios</a> |
+    <a href="/servers">Servidores</a> |
+    <a href="/connections">Conexiones</a>
+</nav>
+<hr>
+
+<?php if (!empty($error)): ?>
+    <div>
+        <h2>❌ ERROR</h2>
+
+        <p><strong>Servidor:</strong></p>
+        <p><strong>URL:</strong> <?php echo htmlspecialchars($server->getUrl()) ?></p>
+        <p><strong>Dominio:</strong> <?php echo htmlspecialchars($server->getDomain()) ?></p>
+        <p><strong>País:</strong> <?php echo htmlspecialchars($server->getCountryServer()) ?></p>
+
+        <hr>
+
+        <p><strong><?php echo htmlspecialchars($error) ?></strong></p>
+
+        <p>
+            Este servidor está siendo utilizado en una o más conexiones.
+            Para eliminarlo, primero debe eliminar las conexiones que lo referencian.
+        </p>
+
+        <a href="/servers">
+            <button type="button">
+                Volver a Servidores
+            </button>
+        </a>
+    </div>
+<?php else: ?>
+    <div>
+        <h2>⚠️ ADVERTENCIA</h2>
+        <p>¿Está seguro que desea eliminar el siguiente servidor?</p>
+
+        <p><strong>URL:</strong> <?php echo htmlspecialchars($server->getUrl()) ?></p>
+        <p><strong>Dominio:</strong> <?php echo htmlspecialchars($server->getDomain()) ?></p>
+        <p><strong>País:</strong> <?php echo htmlspecialchars($server->getCountryServer()) ?></p>
+
+        <p><strong>Esta acción no se puede deshacer.</strong></p>
+
+        <form action="/server/delete/<?php echo $server->getId() ?>" method="POST">
+            <button type="submit" name="confirm" value="1">
+                Sí, Eliminar
+            </button>
+        </form>
+
+        <a href="/servers">
+            <button type="button">
+                No, Cancelar
+            </button>
+        </a>
+    </div>
+<?php endif; ?>
+</body>
+</html>

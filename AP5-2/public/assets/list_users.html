@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listado de Usuarios</title>
+</head>
+<body>
+<h1>Listado de Usuarios</h1>
+<nav>
+    <a href="/">Inicio</a> |
+    <a href="/users">Usuarios</a> |
+    <a href="/servers">Servidores</a> |
+    <a href="/connections">Conexiones</a>
+</nav>
+<hr>
+<p><a href="/user/create">➕ Crear Nuevo Usuario</a></p>
+<table border="1">
+    <tr>
+        <th>Username</th>
+        <th>Nombre</th>
+        <th>Apellido 1</th>
+        <th>Apellido 2</th>
+        <th>Dirección</th>
+        <th>Teléfono</th>
+        <th>Ciudad</th>
+        <th>País</th>
+        <th>Email</th>
+        <th>Observaciones</th>
+        <th>Acciones</th>
+    </tr>
+    <?php if (empty($users)): ?>
+    <tr>
+        <td colspan="11">No hay usuarios registrados</td>
+    </tr>
+    <?php else: ?>
+    <?php foreach ($users as $user): ?>
+    <tr>
+        <td><?php echo htmlspecialchars($user->getUsername()) ?></td>
+        <td><?php echo htmlspecialchars($user->getName()) ?></td>
+        <td><?php echo htmlspecialchars($user->getFirstSubname()) ?></td>
+        <td><?php echo $user->getSecondSubname() ? htmlspecialchars($user->getSecondSubname()) : '' ?></td>
+        <td><?php echo $user->getAddress() ? htmlspecialchars($user->getAddress()) : '' ?></td>
+        <td><?php echo $user->getTelephone() ? htmlspecialchars($user->getTelephone()) : '' ?></td>
+        <td><?php echo $user->getCity() ? htmlspecialchars($user->getCity()) : '' ?></td>
+        <td><?php echo htmlspecialchars($user->getCountry()) ?></td>
+        <td><?php echo htmlspecialchars($user->getEmail()) ?></td>
+        <td><?php echo $user->getObservation() ? htmlspecialchars($user->getObservation()) : '' ?></td>
+        <td>
+            <a href="/user/update/<?php echo $user->getId() ?>">Actualizar</a> |
+            <a href="/user/delete/<?php echo $user->getId() ?>">Eliminar</a>
+        </td>
+    </tr>
+    <?php endforeach; ?>
+    <?php endif; ?>
+</table>
+</body>
+</html>

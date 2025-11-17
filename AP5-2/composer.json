@@ -1,0 +1,20 @@
+{
+  "name": "daw-dwes/ap5-2-mvc-doctrine-crud",
+  "authors": [
+    {
+      "name": "lluís alandete",
+      "email": "lalandete@florida-uni.es"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "AP52\\": "src/"
+    }
+  },
+  "require": {
+    "vlucas/phpdotenv": "^5.6",
+    "doctrine/orm": "^3",
+    "doctrine/dbal": "^4",
+    "symfony/cache": "^7"
+  }
+}

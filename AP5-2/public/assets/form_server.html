@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><?php echo $update ? 'Actualizar' : 'Nuevo' ?> Servidor</title>
+</head>
+<body>
+<h1><?php echo $update ? 'Actualizar' : 'Nuevo' ?> Servidor</h1>
+<nav>
+    <a href="/">Inicio</a> |
+    <a href="/users">Usuarios</a> |
+    <a href="/servers">Servidores</a> |
+    <a href="/connections">Conexiones</a>
+</nav>
+<hr>
+<form action="<?php echo $update ? '/server/update/' . $server->getId() : '/server/create' ?>" method="POST">
+    <label for="url">URL (*):</label><br>
+    <input type="text" name="url" id="url"
+           value="<?php echo $update ? htmlspecialchars($server->getUrl()) : '' ?>"
+           required maxlength="250" size="60"><br><br>
+
+    <label for="domain">Dominio (*):</label><br>
+    <input type="text" name="domain" id="domain"
+           value="<?php echo $update ? htmlspecialchars($server->getDomain()) : '' ?>"
+           required maxlength="250"><br><br>
+
+    <label for="country_server">País (*) (código de 2-4 caracteres):</label><br>
+    <input type="text" name="country_server" id="country_server"
+           value="<?php echo $update ? htmlspecialchars($server->getCountryServer()) : '' ?>"
+           required maxlength="4"><br><br>
+
+    <label for="ip">IP (formato IPv4 o IPv6):</label><br>
+    <input type="text" name="ip" id="ip"
+           value="<?php echo $update && $server->getIp() ? htmlspecialchars($server->getIp()) : '' ?>"
+           maxlength="40"><br><br>
+
+    <label for="observation">Observaciones:</label><br>
+    <textarea name="observation" id="observation" rows="4" cols="60"><?php echo $update && $server->getObservation() ? htmlspecialchars($server->getObservation()) : '' ?></textarea><br><br>
+
+    <button type="submit" name="submit" value="1"><?php echo $update ? 'Actualizar' : 'Crear' ?> Servidor</button>
+    <?php if(!$update): ?>
+    <button type="reset">Limpiar</button>
+    <?php endif; ?>
+    <a href="/servers">
+        <button type="button">Cancelar</button>
+    </a>
+</form>
+</body>
+</html>

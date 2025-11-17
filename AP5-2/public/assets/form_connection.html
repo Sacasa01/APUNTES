@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nueva Conexión</title>
+</head>
+<body>
+<h1>Nueva Conexión</h1>
+<nav>
+    <a href="/">Inicio</a> |
+    <a href="/users">Usuarios</a> |
+    <a href="/servers">Servidores</a> |
+    <a href="/connections">Conexiones</a>
+</nav>
+<hr>
+<form action="/connection/create" method="POST">
+    <label for="user_id">Usuario (*):</label><br>
+    <select name="user_id" id="user_id" required>
+        <option value="">-- Seleccione un usuario --</option>
+        <?php foreach ($users as $user): ?>
+        <option value="<?php echo $user->getId() ?>">
+            <?php echo htmlspecialchars($user->getName()) ?> <?php echo htmlspecialchars($user->getFirstSubname()) ?>
+            (<?php echo htmlspecialchars($user->getEmail()) ?>)
+        </option>
+        <?php endforeach; ?>
+    </select><br><br>
+
+    <label for="server_id">Servidor (*):</label><br>
+    <select name="server_id" id="server_id" required>
+        <option value="">-- Seleccione un servidor --</option>
+        <?php foreach ($servers as $server): ?>
+        <option value="<?php echo $server->getId() ?>">
+            <?php echo htmlspecialchars($server->getUrl()) ?>
+            (<?php echo htmlspecialchars($server->getDomain()) ?>)
+        </option>
+        <?php endforeach; ?>
+    </select><br><br>
+
+    <label for="ip">IP de Conexión (*) (formato IPv4 o IPv6):</label><br>
+    <input type="text" name="ip" id="ip" required maxlength="39"><br><br>
+
+    <label for="date_connection">Fecha y Hora de Conexión (*):</label><br>
+    <input type="datetime-local" name="date_connection" id="date_connection" required><br><br>
+
+    <button type="submit" name="submit" value="1">Crear Conexión</button>
+    <button type="reset">Limpiar</button>
+    <a href="/connections">
+        <button type="button">Cancelar</button>
+    </a>
+</form>
+</body>
+</html>

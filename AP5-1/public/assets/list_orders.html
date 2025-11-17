@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listado de Pedidos</title>
+</head>
+<body>
+<h1>Listado de Pedidos</h1>
+<nav>
+    <a href="/">Inicio</a> |
+    <a href="/clientes">Clientes</a> |
+    <a href="/pedidos">Pedidos</a> |
+    <a href="/productos">Productos</a>
+</nav>
+<hr>
+<table border="1">
+    <tr>
+        <th>Número Pedido</th>
+        <th>Fecha Pedido</th>
+        <th>Tipo</th>
+        <th>Cliente</th>
+        <th>Fecha Envío</th>
+        <th>Total</th>
+        <th>Acciones</th>
+    </tr>
+    <?php if (empty($orders)): ?>
+    <tr>
+        <td colspan="7">No hay pedidos registrados</td>
+    </tr>
+    <?php else: ?>
+    <?php foreach ($orders as $order): ?>
+    <tr>
+        <td><?php echo htmlspecialchars($order->getId()) ?></td>
+        <td><?php echo $order->getOrderDate() ? htmlspecialchars($order->getOrderDate()->format('d-m-Y')) : '-' ?></td>
+        <td><?php echo htmlspecialchars($order->getOrderType() ?? '-') ?></td>
+        <td><?php echo htmlspecialchars($order->getCustomer()->getName()) ?></td>
+        <td><?php echo $order->getShippingDate() ? htmlspecialchars($order->getShippingDate()->format('d-m-Y')) : '-'
+            ?>
+        </td>
+        <td><?php echo $order->getTotal() !== null ? number_format($order->getTotal(), 2) . ' €' : '-' ?></td>
+        <td>
+            <a href="/pedido/read/<?php echo $order->getId() ?>">Ver Detalles</a>
+        </td>
+    </tr>
+    <?php endforeach; ?>
+    <?php endif; ?>
+</table>
+</body>
+</html>

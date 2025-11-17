@@ -1,0 +1,30 @@
+{
+  "/": {
+    "controller": "MainController",
+    "action": "main"
+  },
+  "/users": {
+    "controller": "UserController",
+    "action": "list"
+  },
+  "/user": {
+    "controller": "UserController",
+    "action": "crud"
+  },
+  "/servers": {
+    "controller": "ServerController",
+    "action": "list"
+  },
+  "/server": {
+    "controller": "ServerController",
+    "action": "crud"
+  },
+  "/connections": {
+    "controller": "ConnectionController",
+    "action": "list"
+  },
+  "/connection": {
+    "controller": "ConnectionController",
+    "action": "crud"
+  }
+}

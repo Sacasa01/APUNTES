@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eliminar Producto</title>
+</head>
+<body>
+<h1><?php echo !empty($error) ? 'Error al Eliminar Producto' : 'Confirmar Eliminación de Producto' ?></h1>
+<nav>
+    <a href="/">Inicio</a> |
+    <a href="/clientes">Clientes</a> |
+    <a href="/pedidos">Pedidos</a> |
+    <a href="/productos">Productos</a>
+</nav>
+<hr>
+
+<?php if (!empty($error)): ?>
+    <!-- Mensaje de error -->
+    <div>
+        <h2>❌ ERROR</h2>
+
+        <p><strong>Producto:</strong></p>
+        <p><strong>ID:</strong> <?php echo htmlspecialchars($product->getId()) ?></p>
+        <p><strong>Descripción:</strong> <?php echo htmlspecialchars($product->getDescription()) ?></p>
+
+        <hr>
+
+        <p><strong><?php echo htmlspecialchars($error) ?></strong></p>
+
+        <p>
+            Este producto está siendo utilizado en uno o más detalles de pedidos.
+            Para eliminarlo, primero debe eliminar o modificar los pedidos que lo referencian.
+        </p>
+
+        <a href="/productos">
+            <button type="button">
+                Volver a Productos
+            </button>
+        </a>
+    </div>
+<?php else: ?>
+    <!-- Confirmación de eliminación -->
+    <div>
+        <h2>⚠️ ADVERTENCIA</h2>
+        <p>¿Está seguro que desea eliminar el siguiente producto?</p>
+
+        <p><strong>ID:</strong> <?php echo htmlspecialchars($product->getId()) ?></p>
+        <p><strong>Descripción:</strong> <?php echo htmlspecialchars($product->getDescription()) ?></p>
+
+        <p><strong>Esta acción no se puede deshacer.</strong></p>
+
+        <form action="/producto/delete/<?php echo $product->getId() ?>" method="POST">
+            <button type="submit" name="confirm" value="1">
+                Sí, Eliminar
+            </button>
+        </form>
+
+        <a href="/productos">
+            <button type="button">
+                No, Cancelar
+            </button>
+        </a>
+    </div>
+<?php endif; ?>
+</body>
+</html>
